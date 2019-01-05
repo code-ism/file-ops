@@ -11,12 +11,12 @@ import java.io.IOException;
 
 public class FileUtility {
 
-	private static int top = -1;
 	public static void main(String[] args) {
 
 		FileUtility fileUtility = new FileUtility();
 		Object[] wordsArray = null;
 		String inputFie = null;
+		int top = -1;
 		
 		try {
 			top = Integer.parseInt(args[1]);
@@ -27,7 +27,7 @@ public class FileUtility {
 		
 		try {
 			inputFie = args[0];
-			wordsArray = fileUtility.getTopWords(inputFie);
+			wordsArray = fileUtility.getTopWords(inputFie,top);
 			if(wordsArray.length < top) {
 				top = wordsArray.length;
 			}
@@ -49,7 +49,7 @@ public class FileUtility {
 	/*
 	 * This method returns the top occurrence of words in specified file.
 	 */
-	public Object[] getTopWords(String filePath) throws FileNotFoundException, IOException {
+	public Object[] getTopWords(String filePath,int top) throws FileNotFoundException, IOException {
 		
 		Map <String, Integer> mapOfWords = new HashMap <String, Integer>();
 		String[] listOfWords = null;
@@ -96,6 +96,6 @@ public class FileUtility {
 			}
 		});
 		
-		return wordsArray;
+		return Arrays.copyOfRange(wordsArray, 0, top);
 	}
 }

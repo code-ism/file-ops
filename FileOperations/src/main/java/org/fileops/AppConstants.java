@@ -6,7 +6,7 @@ public final class AppConstants {
 	public static String MESSAGE_USAGE = "Usage : java FileUtility FILE [TOP] \nFILE > File in whcih search is to be performed \n"
 			+ "TOP > No of Top entries to be returned. Optional, default is 10 if no value specified";
 	public static String MESSAGE_DEFAULT_ARG = "No or invlaid argument specified for TOP, using defafult value.";
-	public static String MESSAGE_INVALID_ARGUMENTS = "Invlaid arguments specified, please refer the usage below.";
+	public static String MESSAGE_INVALID_ARGUMENTS = "Cannot continue becuase of invlaid arguments, please refer the usage below.\n";
 	public static String MESSAGE_FILE_NOT_FOUND = "Specified file not foud";
 	public static String MESSAGE_ERROR_FILE_OPERATION = "Some error occured during file operation";
 	public static String MESSAGE_TOP = "Top ";
